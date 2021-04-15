@@ -1,0 +1,7 @@
+*.cfg
+Lib
+Scripts
+Include
+.idea
+*.png
+test.py
