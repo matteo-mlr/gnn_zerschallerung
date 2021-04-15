@@ -98,12 +98,10 @@ def train():
             w[1][i][4] += learn_rate * (t[q] - out) * out * (1 - out) * input[3]
 
 
-def calc_hyp(x, y):
+def calc_hyp(x, y, x_0=PNG_WIDTH/2, y_0=PNG_HEIGHT/2):
     """Berechnet Hypothenuse zwischen x- und y-Koordinate in Relation zum Mittelpunkt des PNGs"""
-
-    virtual_coord_sys_origin = (PNG_WIDTH / 2, PNG_HEIGHT / 2)
-    x = abs(virtual_coord_sys_origin[0] - x)
-    y = abs(virtual_coord_sys_origin[1] - y)
+    x = abs(x_0 - x)
+    y = abs(y_0 - y)
     return math.sqrt(x * x + y * y)
 
 
