@@ -45,8 +45,9 @@ def init_weights():  # Generiert Initialgewichte für alle Neuronen in den Schic
 
 
 def get_neural_output_hidden(input, i):  # input: x-Wert + y-Wert
-
-    return 1 / (1 + math.exp(-10 * (bias * w[0][i][0] + input[0] * w[0][i][1] + input[1] * w[0][i][2])))
+    """ """
+    f = 10 #  f -> 0: kaum Lernfrotschritt, f -> unendlich: scharfe funktion und kaum Bewegung durch die Iteration
+    return 1 / (1 + math.exp(-f * (bias * w[0][i][0] + input[0] * w[0][i][1] + input[1] * w[0][i][2])))
 
 
 def get_neural_output_output(input, i):  # input: Output Neuron 1 + Output Neuron 2 + Output Neuron 3 + Output Neuron 4
@@ -98,7 +99,7 @@ def train():
             w[1][i][4] += learn_rate * (t[q] - out) * out * (1 - out) * input[3]
 
 
-def calc_hyp(x, y, x_0=PNG_WIDTH/2, y_0=PNG_HEIGHT/2):
+def calc_hyp(x: int, y: int, x_0=PNG_WIDTH/2, y_0=PNG_HEIGHT/2) -> float:
     """Berechnet Hypothenuse zwischen x- und y-Koordinate in Relation zum Mittelpunkt des PNGs"""
     x = abs(x_0 - x)
     y = abs(y_0 - y)
