@@ -34,7 +34,7 @@ for i in range(len(x)):
 # Die berechneten Werte als DataFrame speichern, um sie daraufhin gut visualisieren zu können   
 df_res = pd.DataFrame(liste)
 
-# Alle Kurven einzlen visualisieren
+# Alle Kurven einzeln visualisieren
 for i in range(len(x)):
 
     plt.plot(df_res[df_res['starting_condition'] == x[i]]['y'], df_res[df_res['starting_condition'] == x[i]]['x'])
