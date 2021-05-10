@@ -13,8 +13,18 @@ def calculate(x, delta_t):
 
 
 """
-Wenn man für x 1 einsetzt, erhält man 1 + 0.01 * (1 - 1) -> 1 + 0.01 * 0
+
+Der Attraktor läuft gegen einen Fixpunkt:
+
+Für positive Werte (7 und 8):
+Wenn man für x 1 einsetzt, erhält man 1 + 0.01 * (1 - 1) => 1 + 0.01 * 0 => 1
 -> Funktion geht gegen 1
+
+Für negative Werte (-0.2):
+Wenn man für x -1 einsetzt, erhält man -1 + 0.01 * (-1 -(-1)) => -1 + 0.01 * 0 => -1 
+-> Funktion geht gegen -1
+
+
 """
 
 # Pro Anfangsbedingung 1000 Berechnungen durchführen
@@ -39,4 +49,6 @@ for i in range(len(x)):
 
     plt.plot(df_res[df_res['starting_condition'] == x[i]]['y'], df_res[df_res['starting_condition'] == x[i]]['x'])
 
+plt.title('GNN | Aufgabe 1')
+plt.legend(x)
 plt.show() 
