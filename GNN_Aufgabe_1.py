@@ -2,9 +2,20 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
+"""
+
+Gruppenmitglieder:
+
+Knapp, Robin - 1823538
+Delev, Daniel - 1821027
+Müller, Matteo - 1824001
+
+"""
+
+
 x = [7,-0.2,8]
 delta_t = 0.01
-liste = []
+result_list = []
 
 
 def calculate(x, delta_t):
@@ -35,14 +46,14 @@ for i in range(len(x)):
     for q in range(1000):
         
         x_new = calculate(x_new, delta_t)
-        liste.append({
+        result_list.append({
             'x': x_new,
             'y': q,
             'starting_condition': x[i]
         })
     
 # Die berechneten Werte als DataFrame speichern, um sie daraufhin gut visualisieren zu können   
-df_res = pd.DataFrame(liste)
+df_res = pd.DataFrame(result_list)
 
 # Alle Kurven einzeln visualisieren
 for i in range(len(x)):
